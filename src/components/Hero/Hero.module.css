@@ -246,7 +246,27 @@ position: relative;
   }
 }
 
+/* --- Ajuste da imagem para telas grandes (monitores de 25" ou maiores) --- */
+/* --- Ajuste da imagem para telas grandes (monitores de 25" ou maiores) --- */
+@media (min-width: 1400px) {
+  .heroImageColumn {
+    align-items: center; /* Mantém o alinhamento vertical equilibrado */
+  }
 
+.heroTruckImg {
+    object-fit: contain; 
+    object-position: center bottom; 
+    
+    /* Aumente aqui para expandir o tamanho (ex: de 100% para 110% ou 120%) */
+    max-width: 110%; 
+    
+    /* Aumente aqui para dar mais altura aos caminhões (ex: de 80% para 95% ou 100%) */
+    max-height: 95%; 
+    
+    margin-top: -350px; 
+  }
+}
+/* --- Ajuste da imagem para telas grandes (monitores de 25" ou maiores) --- */
 
 
 
