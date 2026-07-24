@@ -32,3 +32,29 @@
   margin-top: 10px;
   font-size: 1.1rem;
 }
+
+
+/* Para navegadores baseados em Chrome, Edge e Safari */
+::-webkit-scrollbar {
+  width: 8px; /* Largura da barra vertical */
+  height: 8px; /* Altura da barra horizontal */
+}
+
+::-webkit-scrollbar-track {
+  background: #0d0d0d; /* Cor do fundo da barra (mesmo tom do seu site) */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #262626; /* Cor do "puxador" da barra */
+  border-radius: 4px; /* Deixa as bordas arredondadas */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #38bdf8; /* Cor do puxador ao passar o mouse (tom neon do seu projeto) */
+}
+
+/* Para o Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #262626 #0d0d0d;
+}
