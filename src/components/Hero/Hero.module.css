@@ -7,23 +7,31 @@
   padding: 0;
   overflow: hidden;
 }
-
 .heroGrid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  /* Reduz o peso do texto (1fr) e aumenta o espaço da imagem (2.2fr) */
+  grid-template-columns: 1fr 2.2fr; 
   width: 100%;
   min-height: 100%;
+  align-items: center;
 }
+
+
 
 /* --- Lado Esquerdo (Texto Proporcional) --- */
 .heroTextColumn {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 60px 60px 60px 90px;
-  background-color: #0b0f19;
-  z-index: 2;
+  /* Reduza o padding esquerdo se tiver, ou ajuste o gap entre os elementos para 12px/16px */
+  gap: 14px; 
+  padding-left: 4%; /* Dá uma margem elegante na bordinha esquerda da tela */
 }
+
+
+
+
+
 
 .miniBadge {
   color: #3b82f6;
@@ -82,30 +90,38 @@
 }
 
 /* --- Lado Direito (Imagem Sangrada) --- */
+
+/* --- Lado Direito (Imagem Sangrada) --- */
+/* --- Lado Direito (Imagem Sangrada) --- */
+/* --- Lado Direito (Imagem Sangrada Corrigida) --- */
+/* --- Container da Imagem (Alterado para alinhar pelo topo) --- */
 .heroImageColumn {
   width: 100%;
   height: 100%;
-  background-image: url('/img/guincho.png');
-  background-position: center center;
-  /* Mudamos de cover para contain */
-  background-size: contain; 
-  background-repeat: no-repeat;
+  display: flex;
+  align-items: flex-start; /* MUDOU AQUI: Alinha o topo da imagem com o topo da seção */
+  justify-content: flex-start; 
   position: relative;
-  /* Adicionamos uma cor de fundo para as bordas que podem sobrar */
   background-color: #0b0f19; 
+  overflow: hidden;
 }
 
-/* Gradiente de fusão suave */
-.heroImageColumn::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100px;
+/* --- A Imagem dos Caminhões (Subindo com margem negativa) --- */
+.heroTruckImg {
+  width: 100%;
   height: 100%;
-  background: linear-gradient(to right, #0b0f19, transparent);
-  z-index: 1;
+  object-fit: contain; 
+  object-position: top left; /* Mantém a ancoragem no topo esquerdo */
+  
+  /* MUDAR AQUI: Margem negativa para "puxar" a imagem para cima */
+  /* Ajuste esse valor (ex: -50px) até a roda do caminhão liberar o botão */
+  margin-top: -0px; 
 }
+
+
+
+
+
 
 /* --- Estilos dos Botões do Hero --- */
 .heroButtonsContainer {
@@ -155,6 +171,10 @@
   box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.5);
   border: 1px solid #2563eb;
   white-space: nowrap;
+position: relative;
+  left: 15px;         /* Move o botão para a direita, invadindo o território da imagem */
+  z-index: 10;
+  
 }
 
 .phoneButton:hover {
@@ -211,14 +231,18 @@
 
 /* Responsivo para telas menores */
 @media (max-width: 768px) {
-  .heroButtonsContainer {
+.heroButtonsContainer {
     flex-direction: column;
     width: 100%;
+    align-items: center; /* Centraliza os botões na tela */
   }
 
-  .whatsappButton, .phoneButton {
+  .whatsappButton, 
+  .phoneButton {
     width: 100%;
+    max-width: 280px; /* Mantém uma largura padrão elegante e igual para ambos */
     justify-content: center;
+    left: 0; /* Reseta o deslocamento lateral que estava bugando no mobile */
   }
 }
 

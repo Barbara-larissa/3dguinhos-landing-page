@@ -69,7 +69,9 @@ export default function Hero() {
         </div>
 
         {/* Lado Direito: Imagem */}
-        <div className={styles.heroImageColumn} role="img" aria-label="Caminhão Guincho 24 Horas"></div>
+       <div className={styles.heroImageColumn}>
+          <img src="/img/guincho-3.png" alt="Caminhões Guincho 24 Horas" className={styles.heroTruckImg} />
+        </div>
 
       </div>
     </section>

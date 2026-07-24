@@ -46,12 +46,13 @@
 }
 
 @media (max-width: 768px) {
-  .reviewsSection {
+ .reviewsSection {
     padding: 30px 10px;
   }
 
   .reviewsContainer {
-    max-height: 340px; 
+    /* Diminuímos levemente para 315px para cortar a bordinha branca da marca d'água */
+    max-height: 315px; 
   }
 
   .sectionTitle {
