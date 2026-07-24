@@ -2,8 +2,8 @@ import React from 'react';
 import styles from './WhatsAppButton.module.css';
 
 export default function WhatsAppButton() {
-  // Número atualizado com DDI e DDD
-const phoneNumber = "554391807819";
+  // Número correto com o 9 logo após o DDD 43: 55 43 9 1807-7819
+  const phoneNumber = "554391807819"; 
   const message = encodeURIComponent("Olá! Vim pelo site e gostaria de mais informações.");
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
 
