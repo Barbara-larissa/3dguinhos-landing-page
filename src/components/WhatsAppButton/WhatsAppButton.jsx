@@ -3,7 +3,7 @@ import styles from './WhatsAppButton.module.css';
 
 export default function WhatsAppButton() {
   // Número atualizado com DDI e DDD
-  const phoneNumber = "5543991807819"; 
+const phoneNumber = "554391807819";
   const message = encodeURIComponent("Olá! Vim pelo site e gostaria de mais informações.");
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
 
