@@ -2,8 +2,8 @@ import React from 'react';
 import styles from './WhatsAppButton.module.css';
 
 export default function WhatsAppButton() {
-  // Substitua pelo seu número com DDI e DDD (ex: 5543999999999)
-  const phoneNumber = "5543996674693"; 
+  // Número atualizado com DDI e DDD
+  const phoneNumber = "5543991807819"; 
   const message = encodeURIComponent("Olá! Vim pelo site e gostaria de mais informações.");
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
 
