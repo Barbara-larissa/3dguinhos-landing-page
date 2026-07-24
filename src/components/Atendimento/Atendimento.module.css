@@ -1,0 +1,249 @@
+.atendimentoSection {
+  width: 100%;
+  background-color: #070a10;
+  padding: 80px 20px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.atendimentoContainer {
+  width: 100%;
+  max-width: 1300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Cabeçalho da Seção */
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  font-weight: 900;
+  font-style: italic;
+  color: #ffffff;
+  text-transform: uppercase;
+  margin: 0 0 12px 0;
+  letter-spacing: 0.08em;
+}
+
+.titleBlue {
+  color: #3b82f6;
+  text-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+}
+
+.titleDivider {
+  width: 70px;
+  height: 4px;
+  background-color: #3b82f6;
+  margin: 0 auto;
+  border-radius: 2px;
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.8);
+}
+
+/* Grid Lado a Lado exato */
+.contentGrid {
+  width: 100%;
+  max-width: 1100px; /* Reduz a largura máxima para fechar mais o layout */
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr; /* Dá mais espaço proporcional para o texto */
+  align-items: center;
+  justify-content: center;
+  gap: 30px; /* Diminui a distância entre o texto e o mapa */
+  margin: 0 auto;
+}
+
+/* Coluna de Texto */
+.textColumn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.locationTitleGroup {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.pinIconWrapper {
+  color: #3b82f6;
+  margin-top: 5px;
+  filter: drop-shadow(0 0 12px rgba(59, 130, 246, 0.8));
+}
+
+.citiesText h3 {
+  color: #ffffff;
+  font-size: 2.2rem;
+  font-weight: 900;
+  line-height: 1.2;
+  margin: 0;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.subText {
+  color: #3b82f6;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-shadow: 0 0 10px rgba(59, 130, 246, 0.4);
+  padding-left: 48px;
+}
+
+/* Coluna do Mapa / Ilustração da Direita */
+.mapColumn {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mapIllustration {
+  width: 100%;
+  max-width: 480px;
+  height: 280px;
+  background: radial-gradient(circle, rgba(15, 23, 42, 0.9) 0%, rgba(7, 10, 16, 0.95) 100%);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  border-radius: 20px;
+  position: relative;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7), 0 0 20px rgba(37, 99, 235, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mapPlaceholder {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.mapLabel {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #64748b;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+.mapImageWrapper {
+  width: 100%;
+  max-width: 380px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.mapImage {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  /* Contorno de luz múltiplo: cria uma aura neon intensa contornando o formato do mapa */
+  filter: 
+    drop-shadow(0 0 8px rgba(59, 130, 246, 0.9))
+    drop-shadow(0 0 20px rgba(37, 99, 235, 0.6))
+    drop-shadow(0 15px 30px rgba(0, 0, 0, 0.9));
+  animation: floatMap 4s ease-in-out infinite, neonBorderPulse 3s ease-in-out infinite;
+  transition: transform 0.3s ease;
+}
+
+.mapImage:hover {
+  transform: scale(1.03);
+}
+
+/* Animação de flutuação */
+@keyframes floatMap {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* Animação para o contorno de luz pulsar suavemente */
+@keyframes neonBorderPulse {
+  0% {
+    filter: 
+      drop-shadow(0 0 6px rgba(59, 130, 246, 0.7))
+      drop-shadow(0 0 15px rgba(37, 99, 235, 0.4))
+      drop-shadow(0 15px 30px rgba(0, 0, 0, 0.9));
+  }
+  50% {
+    filter: 
+      drop-shadow(0 0 12px rgba(96, 165, 250, 1))
+      drop-shadow(0 0 30px rgba(59, 130, 246, 0.8))
+      drop-shadow(0 15px 30px rgba(0, 0, 0, 0.9));
+  }
+  100% {
+    filter: 
+      drop-shadow(0 0 6px rgba(59, 130, 246, 0.7))
+      drop-shadow(0 0 15px rgba(37, 99, 235, 0.4))
+      drop-shadow(0 15px 30px rgba(0, 0, 0, 0.9));
+  }
+}
+
+
+
+
+/* Pins simulados no mapa */
+.centralPin {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.5rem;
+  filter: drop-shadow(0 0 8px rgba(59, 130, 246, 0.9));
+}
+
+.nodePin {
+  position: absolute;
+  font-size: 1rem;
+  opacity: 0.85;
+  filter: drop-shadow(0 0 6px rgba(59, 130, 246, 0.7));
+}
+
+.pin1 { top: 25%; left: 30%; }
+.pin2 { top: 20%; right: 25%; }
+.pin3 { top: 55%; left: 20%; }
+.pin4 { bottom: 25%; right: 30%; }
+.pin5 { top: 70%; left: 45%; }
+
+/* Responsividade para celulares e tablets */
+@media (max-width: 900px) {
+  .contentGrid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+  }
+
+  .locationTitleGroup {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .subText {
+    padding-left: 0;
+  }
+
+  .citiesText h3 {
+    font-size: 1.6rem;
+  }
+}

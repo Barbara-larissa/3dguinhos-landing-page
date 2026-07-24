@@ -1,0 +1,65 @@
+.reviewsSection {
+  width: 100%;
+  padding: 50px 20px;
+  background-color: #0d0d0d;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.reviewsContainer {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  /* SEGREDO: Trava a altura máxima e esconde tudo o que vazar para fora */
+  max-height: 330px; /* Ajuste esse valor para cortar exatamente abaixo do botão azul */
+  overflow: hidden;  
+  position: relative;
+}
+
+.sectionTitle {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #ffffff;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  letter-spacing: 0.5px;
+}
+
+.titleNeon {
+  color: #38bdf8;
+  text-shadow: 0 0 10px rgba(56, 189, 248, 0.4);
+}
+
+.sectionDivider {
+  width: 50px;
+  height: 3px;
+  background: linear-gradient(90deg, #38bdf8, #25d366);
+  border-radius: 2px;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  .reviewsSection {
+    padding: 30px 10px;
+  }
+
+  .reviewsContainer {
+    max-height: 340px; 
+  }
+
+  .sectionTitle {
+    font-size: 1.5rem;
+    padding: 0 10px;
+  }
+
+  .sectionDivider {
+    margin-bottom: 20px;
+  }
+}

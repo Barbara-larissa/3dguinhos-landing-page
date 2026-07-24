@@ -1,0 +1,325 @@
+.heroSection {
+  width: 100%;
+  min-height: calc(100vh - 80px);
+  background-color: #0b0f19;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.heroGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  min-height: 100%;
+}
+
+/* --- Lado Esquerdo (Texto Proporcional) --- */
+.heroTextColumn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 60px 60px 60px 90px;
+  background-color: #0b0f19;
+  z-index: 2;
+}
+
+.miniBadge {
+  color: #3b82f6;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.heroTitle {
+  font-size: 4.2rem; /* Bem grandão e imponente */
+  font-weight: 900;
+  font-style: italic;
+  line-height: 0.95;
+  color: #ffffff;
+  margin: 0 0 12px 0;
+  text-transform: uppercase;
+  text-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
+}
+
+.highlightBlue {
+  color: #3b82f6;
+  display: block;
+}
+
+.heroSubtitle {
+  color: #ffffff;
+  font-size: 2.2rem; /* Proporcionalmente maior */
+  font-weight: 900;
+  font-style: italic;
+  letter-spacing: 0.05em;
+  margin: 0 0 25px 0;
+  text-transform: uppercase;
+}
+
+.dividerLine {
+  width: 70px;
+  height: 4px;
+  background-color: #2563eb;
+  margin-bottom: 25px;
+  border-radius: 2px;
+}
+
+.descriptionText {
+  color: #9ca3af;
+  font-size: 1.25rem; /* Texto descritivo mais encorpado */
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+/* --- Lado Direito (Imagem Sangrada) --- */
+.heroImageColumn {
+  width: 100%;
+  height: 100%;
+  background-image: url('/img/guincho.png');
+  background-position: center center;
+  /* Mudamos de cover para contain */
+  background-size: contain; 
+  background-repeat: no-repeat;
+  position: relative;
+  /* Adicionamos uma cor de fundo para as bordas que podem sobrar */
+  background-color: #0b0f19; 
+}
+
+/* Gradiente de fusão suave */
+.heroImageColumn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 100%;
+  background: linear-gradient(to right, #0b0f19, transparent);
+  z-index: 1;
+}
+
+/* --- Estilos dos Botões do Hero --- */
+.heroButtonsContainer {
+  display: flex;
+  flex-direction: row; /* Força os botões a ficarem na horizontal (lado a lado) */
+  align-items: center;
+  gap: 16px;
+  margin-top: 35px;
+  flex-wrap: nowrap; /* Impede que eles quebrem de linha em telas grandes */
+}
+
+/* Botão do WhatsApp (Verde) */
+/* Botão do WhatsApp (Verde) */
+/* Botões padronizados com tamanho idêntico (altura e largura fixas) */
+.whatsappButton, 
+.phoneButton {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 270px;          /* Largura idêntica para os dois */
+  height: 64px;          /* Altura idêntica travada para não variar */
+  padding: 0 20px;       /* Padding lateral interno */
+  border-radius: 12px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+  flex-shrink: 0;
+}
+
+/* Botão do WhatsApp (Verde) */
+.whatsappButton {
+  background-color: #10b981;
+  color: #ffffff;
+  box-shadow: 0 10px 20px -5px rgba(16, 185, 129, 0.4);
+  border: 1px solid #34d399;
+}
+
+.whatsappButton:hover {
+  background-color: #059669;
+  transform: translateY(-2px);
+}
+
+/* Botão de Ligar (Escuro com borda azul) */
+.phoneButton {
+  background-color: #070a10;
+  color: #ffffff;
+  box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.5);
+  border: 1px solid #2563eb;
+  white-space: nowrap;
+}
+
+.phoneButton:hover {
+  background-color: #0f172a;
+  border-color: #3b82f6;
+  transform: translateY(-2px);
+}
+
+
+
+
+
+
+/* Ícones */
+.buttonIcon {
+  font-size: 2rem;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+}
+
+.buttonIconPhone {
+  font-size: 1.5rem;
+  color: #3b82f6;
+  display: flex;
+  align-items: center;
+}
+
+/* Textos Internos dos Botões */
+.buttonTextContent {
+  display: flex;
+  flex-direction: column;
+}
+
+.buttonTitle {
+  font-size: 0.85rem;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.buttonSubtitle {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #e2e8f0;
+}
+
+.buttonPhoneText {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #3b82f6;
+  letter-spacing: 0.05em;
+}
+
+/* Responsivo para telas menores */
+@media (max-width: 768px) {
+  .heroButtonsContainer {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .whatsappButton, .phoneButton {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ========== RESPONSIVO =============*/
+
+/* --- Ajustes específicos para telas grandes (25 polegadas / monitores wide) --- */
+/* --- Ajuste exclusivo para telas grandes (25 polegadas ou superiores) --- */
+@media (min-width: 1600px) {
+  .heroSection {
+    justify-content: center;
+  }
+
+  .heroGrid {
+    max-width: 1500px; /* Trava a largura máxima para não esticar demais na tela de 25" */
+    margin: 0 auto;
+  }
+
+  .heroTextColumn {
+    padding: 80px 80px 80px 100px;
+  }
+
+  .heroTitle {
+    font-size: 4.8rem; /* Escala o texto de forma proporcional à tela grande */
+  }
+
+  .heroSubtitle {
+    font-size: 2.4rem;
+  }
+
+  .descriptionText {
+    font-size: 1.35rem;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* --- Responsividade para Celulares --- */
+@media (max-width: 992px) {
+  .heroGrid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 320px;
+  }
+
+  .heroTextColumn {
+    padding: 30px 20px;
+    align-items: center;
+    text-align: center;
+  }
+
+  .heroTitle {
+    font-size: 2.2rem;
+  }
+
+  .heroSubtitle {
+    font-size: 1.2rem;
+  }
+
+  .dividerLine {
+    margin: 0 auto 15px auto;
+  }
+
+  .heroImageColumn::before {
+    display: none;
+  }
+}

@@ -1,0 +1,100 @@
+.header {
+  width: 100%;
+  background-color: #070a10;
+  border-bottom: 1px solid rgba(31, 41, 55, 0.8);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 40px; /* Aumentado para afastar o logo e os links das bordas da tela */
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logoLink {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.logoImage {
+  height: 100px;
+  width: auto;
+  object-fit: contain;
+}
+
+.desktopNav {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .desktopNav {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+  }
+
+  .desktopNav a {
+    color: #d1d5db;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .desktopNav a:hover {
+    color: #3b82f6;
+  }
+}
+
+.menuButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #2563eb;
+  color: #ffffff;
+  padding: 10px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.3);
+}
+
+.menuButton:hover {
+  background-color: #1d4ed8;
+}
+
+@media (min-width: 768px) {
+  .menuButton {
+    display: none;
+  }
+}
+
+.mobileNav {
+  display: flex;
+  flex-direction: column;
+  background-color: #070a10;
+  border-bottom: 1px solid #1f2937;
+  padding: 16px 24px;
+  gap: 12px;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.05em;
+}
+
+.mobileNav a {
+  color: #d1d5db;
+  text-decoration: none;
+  padding: 6px 0;
+  transition: color 0.2s ease;
+}
+
+.mobileNav a:hover {
+  color: #3b82f6;
+}

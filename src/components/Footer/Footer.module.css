@@ -1,0 +1,110 @@
+.footer {
+  width: 100%;
+  background-color: #050505;
+  border-top: 1px solid #1f2937;
+  color: #9ca3af;
+  padding: 3rem 1rem 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr 1.2fr;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+.brandColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Estilos da Logo */
+.logoContainer {
+  max-width: 160px; /* Ajuste a largura máxima da logo se precisar dela maior ou menor */
+}
+
+.logoImg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.brandColumn p {
+  font-size: 0.9rem;
+  color: #9ca3af;
+  line-height: 1.4;
+}
+
+.socialLink {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #9ca3af;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.2s;
+}
+
+.socialLink:hover {
+  color: #ffffff;
+}
+
+.column h3 {
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  letter-spacing: 0.5px;
+}
+
+.column a, .column p {
+  font-size: 0.9rem;
+  color: #9ca3af;
+  text-decoration: none;
+  margin-bottom: 0.6rem;
+  display: block;
+  transition: color 0.2s ease;
+}
+
+.column a:hover {
+  color: #ffffff;
+}
+
+.contactItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.6rem;
+  color: #9ca3af;
+  font-size: 0.9rem;
+}
+
+.bottomBar {
+  width: 100%;
+  max-width: 1200px;
+  border-top: 1px solid #1f2937;
+  padding-top: 1.5rem;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+/* Aumenta o tamanho do ícone do Instagram */
+/* Deixa o ícone do Instagram azul */
+.socialLink svg {
+  font-size: 1.58rem; 
+  color: #2563eb; /* Azul padrão do seu tema */
+}

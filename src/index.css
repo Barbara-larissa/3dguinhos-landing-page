@@ -1,0 +1,24 @@
+/* Configuração Global - Dark Mode */
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #0b0f19;
+  color: #ffffff;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  min-height: 100vh;
+}
+
+/* Seleção de texto personalizada */
+::selection {
+  background-color: #2563eb;
+  color: #ffffff;
+}

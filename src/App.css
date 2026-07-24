@@ -1,0 +1,34 @@
+.app-container {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #0b0f19;
+  color: #ffffff;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+.main-content {
+  width: 100%;
+}
+
+.hero-section {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.hero-title {
+  font-size: 2.5rem;
+  font-weight: 900;
+  font-style: italic;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.highlight-blue {
+  color: #3b82f6;
+}
+
+.hero-subtitle {
+  color: #9ca3af;
+  margin-top: 10px;
+  font-size: 1.1rem;
+}
