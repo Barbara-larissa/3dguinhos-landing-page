@@ -258,15 +258,25 @@ position: relative;
     object-position: center bottom; 
     
     /* Aumente aqui para expandir o tamanho (ex: de 100% para 110% ou 120%) */
-    max-width: 110%; 
+    max-width: 130%; 
     
     /* Aumente aqui para dar mais altura aos caminhões (ex: de 80% para 95% ou 100%) */
     max-height: 95%; 
     
-    margin-top: -350px; 
+    margin-top: -450px; 
   }
 }
 /* --- Ajuste da imagem para telas grandes (monitores de 25" ou maiores) --- */
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -1,0 +1,151 @@
+.sobreContainer {
+  width: 100%;
+  color: #fff;
+  background-color: #121212;
+  font-family: inherit;
+}
+
+.sobreHero {
+  background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
+  color: #fff;
+  text-align: center;
+  padding: 60px 20px;
+  border-bottom: 1px solid #222;
+}
+
+.sobreHero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #00bfff;
+}
+
+.sobreHero p {
+  font-size: 1.1rem;
+  color: #bbb;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.conteudoSection {
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.textoBox h2 {
+  font-size: 2rem;
+  margin-bottom: 25px;
+  color: #fff;
+  line-height: 1.2;
+}
+
+.textoBox p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #ccc;
+  margin-bottom: 16px;
+}
+
+.textoBox strong {
+  color: #00bfff;
+}
+
+/* Container dedicado para a imagem */
+/* Container dedicado para a imagem com borda iluminada */
+.imagemContainer {
+  background: #1f1f1f;
+  border: 2px solid #00bfff;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 191, 255, 0.4), inset 0 0 10px rgba(0, 191, 255, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: box-shadow 0.3s ease;
+}
+
+.imagemContainer:hover {
+  box-shadow: 0 0 30px rgba(0, 191, 255, 0.7), inset 0 0 15px rgba(0, 191, 255, 0.4);
+}
+
+.imagemSobre {
+  width: 100%;
+  height: auto;
+  max-height: 450px;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+}
+
+.diferenciaisSection {
+  background: #181818;
+  padding: 60px 20px;
+  text-align: center;
+  border-top: 1px solid #222;
+  border-bottom: 1px solid #222;
+}
+
+.diferenciaisSection h2 {
+  font-size: 2rem;
+  margin-bottom: 40px;
+  color: #fff;
+}
+
+.cardsGrid {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.card {
+  background: #1f1f1f;
+  border: 1px solid #2a2a2a;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+  text-align: left;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  border-color: #00bfff;
+}
+
+.cardIcon {
+  color: #00bfff;
+  margin-bottom: 15px;
+}
+
+.card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.card p {
+  font-size: 0.95rem;
+  color: #aaa;
+  line-height: 1.5;
+}
+
+/* Responsividade para celulares e tablets */
+@media (max-width: 900px) {
+  .gridContainer {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .sobreHero h1 {
+    font-size: 2rem;
+  }
+}
