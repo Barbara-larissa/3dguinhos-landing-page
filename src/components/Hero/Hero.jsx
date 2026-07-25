@@ -35,17 +35,29 @@ export default function Hero() {
           <div className={styles.heroButtonsContainer}>
 
             {/* Botão WhatsApp (Usando ícone oficial do FontAwesome) */}
-       {/* Botão WhatsApp (Usando ícone oficial do FontAwesome) */}
+            {/* Botão WhatsApp (Usando ícone oficial do FontAwesome) */}
+
+
             <a
               href="https://wa.me/5543991807819"
               target="_blank"
               rel="noopener noreferrer"
               className={styles.whatsappButton}
-              onClick={() => {
-                if (typeof window.gtag === 'function') {
+              onClick={(e) => {
+                e.preventDefault();
+                const whatsappUrl = "https://wa.me/5543991807819";
+
+                const callback = function () {
+                  window.open(whatsappUrl, '_blank');
+                };
+
+                if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
                   window.gtag('event', 'conversion', {
-                    'send_to': 'AW-17903717658/CONTATO'
+                    'send_to': 'AW-17903717658/DOrcCIjakdYcEJqalNlC',
+                    'event_callback': callback
                   });
+                } else {
+                  callback();
                 }
               }}
             >
@@ -57,7 +69,6 @@ export default function Hero() {
                 <span className={styles.buttonSubtitle}>Atendimento 24 horas</span>
               </div>
             </a>
-
             {/* Botão Telefone (Usando ícone de telefone profissional do FontAwesome) */}
             <a
               href="tel:5543991807819"

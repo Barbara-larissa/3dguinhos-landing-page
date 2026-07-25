@@ -2,16 +2,27 @@ import React from 'react';
 import styles from './WhatsAppButton.module.css';
 
 export default function WhatsAppButton() {
-  const phoneNumber = "554391807819"; 
+  const phoneNumber = "5543991807819"; 
   const message = encodeURIComponent("Olá! Vim pelo site e gostaria de mais informações.");
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
 
-  const handleClick = () => {
-    // Dispara o evento de conversão do Google Ads
-    if (typeof window.gtag === 'function') {
+  const handleClick = (e) => {
+    e.preventDefault();
+    
+    // Função de callback para garantir que a conversão seja enviada antes de abrir o link
+    const callback = function () {
+      window.open(whatsappUrl, '_blank');
+    };
+
+    // Dispara o evento de conversão oficial do Google Ads
+    if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
       window.gtag('event', 'conversion', {
-        'send_to': 'AW-17903717658/CONTATO' // Ou substitua 'CONTATO' pelo rótulo exato caso o cliente ajuste depois
+        'send_to': 'AW-17903717658/DOrcCIjakdYcEJqalNlC',
+        'event_callback': callback
       });
+    } else {
+      // Fallback caso o gtag demore
+      callback();
     }
   };
 

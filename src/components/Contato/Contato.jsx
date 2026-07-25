@@ -5,15 +5,28 @@ import styles from './Contato.module.css';
 export default function Contato() {
   const numeroWhats = "5543991807819";
 
-  const handleWhatsAppClick = (cidade) => {
-    if (typeof window !== 'undefined' && window.gtag) {
+  // Função padrão fornecida pelo Google Ads para rastrear a conversão e abrir o link
+  const gtag_report_conversion = (url) => {
+    var callback = function () {
+      if (typeof(url) != 'undefined') {
+        window.open(url, '_blank');
+      }
+    };
+    
+    if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
       window.gtag('event', 'conversion', {
-        'send_to': 'AW-17903717658/CONTATO_WHATSAPP',
+        'send_to': 'AW-17903717658/DOrcCIjakdYcEJqalNlC',
+        'event_callback': callback
       });
+    } else {
+      // Fallback caso o gtag demore ou não carregue por algum bloqueador
+      callback(url);
     }
+    
+    return false;
   };
 
-  // Ícone SVG oficial e detalhado do WhatsApp
+  // Ícone SVG oficial do WhatsApp
   const WhatsAppIcon = () => (
     <svg 
       xmlns="http://www.w3.org/2000/svg" 
@@ -29,16 +42,13 @@ export default function Contato() {
   return (
     <div className={styles.contatoContainer}>
       
-      {/* Cabeçalho da Página */}
       <div className={styles.contatoHero}>
         <h1>Fale Conosco</h1>
         <p>Precisou de guincho em Londrina e região? Atendimento rápido 24 horas!</p>
       </div>
 
-      {/* Conteúdo Principal */}
       <section className={styles.conteudoSection}>
         
-        {/* Informações Gerais e Horários */}
         <div className={styles.geralInfo}>
           <div className={styles.cardInfoStatic}>
             <Clock size={28} className={styles.iconStatic} />
@@ -59,66 +69,62 @@ export default function Contato() {
         <h2 className={styles.tituloSecao}>Atendimento por Região</h2>
         <p className={styles.subtituloSecao}>Escolha a sua cidade abaixo para falar diretamente com o guincho de plantão:</p>
 
-        {/* 3 Cards de Cidades Lado a Lado */}
         <div className={styles.cardsCidadesGrid}>
           
-          {/* Card 1: Londrina */}
+          {/* Londrina */}
           <div className={styles.cidadeCard}>
             <div className={styles.cidadeHeader}>
               <MapPin size={24} className={styles.iconPin} />
               <h3>Londrina - PR</h3>
             </div>
-            <p>
-              Precisa de socorro em Londrina? Nossa equipe está nas ruas com atendimento ágil para pane mecânica ou transporte do seu veículo.
-            </p>
+            <p>Precisa de socorro em Londrina? Nossa equipe está nas ruas com atendimento ágil para pane mecânica ou transporte do seu veículo.</p>
             <a 
-              href={`https://wa.me/${numeroWhats}?text=Olá! Preciso de um guincho em Londrina.`} 
-              target="_blank" 
-              rel="noopener noreferrer" 
+              href="javascript:void(0);" 
+              onClick={(e) => {
+                e.preventDefault();
+                gtag_report_conversion(`https://wa.me/${numeroWhats}?text=Olá! Preciso de um guincho em Londrina.`);
+              }}
               className={styles.botaoWhatsCidade}
-              onClick={() => handleWhatsAppClick('Londrina')}
             >
               <WhatsAppIcon />
               Chamar em Londrina
             </a>
           </div>
 
-          {/* Card 2: Cambé */}
+          {/* Cambé */}
           <div className={styles.cidadeCard}>
             <div className={styles.cidadeHeader}>
               <MapPin size={24} className={styles.iconPin} />
               <h3>Cambé - PR</h3>
             </div>
-            <p>
-              Ficou com o carro parado em Cambé? Atendemos toda a cidade e rodovias da região com rapidez e segurança total.
-            </p>
+            <p>Ficou com o carro parado em Cambé? Atendemos toda a cidade e rodovias da região com rapidez e segurança total.</p>
             <a 
-              href={`https://wa.me/${numeroWhats}?text=Olá! Preciso de um guincho em Cambé.`} 
-              target="_blank" 
-              rel="noopener noreferrer" 
+              href="javascript:void(0);" 
+              onClick={(e) => {
+                e.preventDefault();
+                gtag_report_conversion(`https://wa.me/${numeroWhats}?text=Olá! Preciso de um guincho em Cambé.`);
+              }}
               className={styles.botaoWhatsCidade}
-              onClick={() => handleWhatsAppClick('Cambé')}
             >
               <WhatsAppIcon />
               Chamar em Cambé
             </a>
           </div>
 
-          {/* Card 3: Ibiporã */}
+          {/* Ibiporã */}
           <div className={styles.cidadeCard}>
             <div className={styles.cidadeHeader}>
               <MapPin size={24} className={styles.iconPin} />
               <h3>Ibiporã - PR</h3>
             </div>
-            <p>
-              Serviço de guincho 24h em Ibiporã e proximidades. Estamos prontos para realizar o transporte seguro do seu automóvel.
-            </p>
+            <p>Serviço de guincho 24h em Ibiporã e proximidades. Estamos prontos para realizar o transporte seguro do seu automóvel.</p>
             <a 
-              href={`https://wa.me/${numeroWhats}?text=Olá! Preciso de um guincho em Ibiporã.`} 
-              target="_blank" 
-              rel="noopener noreferrer" 
+              href="javascript:void(0);" 
+              onClick={(e) => {
+                e.preventDefault();
+                gtag_report_conversion(`https://wa.me/${numeroWhats}?text=Olá! Preciso de um guincho em Ibiporã.`);
+              }}
               className={styles.botaoWhatsCidade}
-              onClick={() => handleWhatsAppClick('Ibiporã')}
             >
               <WhatsAppIcon />
               Chamar em Ibiporã
