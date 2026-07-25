@@ -9,7 +9,7 @@ export default function Hero() {
   return (
     <section id="inicio" className={styles.heroSection}>
       <div className={styles.heroGrid}>
-        
+
         {/* Lado Esquerdo: Textos */}
         <div className={styles.heroTextColumn}>
           <div className={styles.badgeBox}>
@@ -33,13 +33,21 @@ export default function Hero() {
 
           {/* --- BLOCO DOS BOTÕES ATUALIZADO --- */}
           <div className={styles.heroButtonsContainer}>
-            
+
             {/* Botão WhatsApp (Usando ícone oficial do FontAwesome) */}
-            <a 
-              href="https://wa.me/5543991807819" 
-              target="_blank" 
-              rel="noopener noreferrer" 
+       {/* Botão WhatsApp (Usando ícone oficial do FontAwesome) */}
+            <a
+              href="https://wa.me/5543991807819"
+              target="_blank"
+              rel="noopener noreferrer"
               className={styles.whatsappButton}
+              onClick={() => {
+                if (typeof window.gtag === 'function') {
+                  window.gtag('event', 'conversion', {
+                    'send_to': 'AW-17903717658/CONTATO'
+                  });
+                }
+              }}
             >
               <div className={styles.buttonIcon}>
                 <FontAwesomeIcon icon={faWhatsapp} />
@@ -51,8 +59,8 @@ export default function Hero() {
             </a>
 
             {/* Botão Telefone (Usando ícone de telefone profissional do FontAwesome) */}
-            <a 
-              href="tel:5543991807819" 
+            <a
+              href="tel:5543991807819"
               className={styles.phoneButton}
             >
               <div className={styles.buttonIconPhone}>
@@ -69,7 +77,7 @@ export default function Hero() {
         </div>
 
         {/* Lado Direito: Imagem */}
-       <div className={styles.heroImageColumn}>
+        <div className={styles.heroImageColumn}>
           <img src="/img/guincho-3.png" alt="Caminhões Guincho 24 Horas" className={styles.heroTruckImg} />
         </div>
 

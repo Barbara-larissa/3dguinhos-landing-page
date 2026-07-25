@@ -2,10 +2,18 @@ import React from 'react';
 import styles from './WhatsAppButton.module.css';
 
 export default function WhatsAppButton() {
-  // Número correto com o 9 logo após o DDD 43: 55 43 9 1807-7819
   const phoneNumber = "554391807819"; 
   const message = encodeURIComponent("Olá! Vim pelo site e gostaria de mais informações.");
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
+
+  const handleClick = () => {
+    // Dispara o evento de conversão do Google Ads
+    if (typeof window.gtag === 'function') {
+      window.gtag('event', 'conversion', {
+        'send_to': 'AW-17903717658/CONTATO' // Ou substitua 'CONTATO' pelo rótulo exato caso o cliente ajuste depois
+      });
+    }
+  };
 
   return (
     <a
@@ -14,6 +22,7 @@ export default function WhatsAppButton() {
       rel="noopener noreferrer"
       className={styles.whatsappFloat}
       aria-label="Fale conosco pelo WhatsApp"
+      onClick={handleClick}
     >
       <svg 
         className={styles.whatsappIcon} 
