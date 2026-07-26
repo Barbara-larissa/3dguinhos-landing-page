@@ -36,9 +36,7 @@ export default function Hero() {
 
             {/* Botão WhatsApp (Usando ícone oficial do FontAwesome) */}
             {/* Botão WhatsApp (Usando ícone oficial do FontAwesome) */}
-
-
-           <a
+<a
   href="https://wa.me/5543991807819"
   target="_blank"
   rel="noopener noreferrer"
@@ -47,18 +45,31 @@ export default function Hero() {
     e.preventDefault();
 
     const whatsappUrl = "https://wa.me/5543991807819";
+    let opened = false;
 
     const callback = () => {
+      if (opened) return;
+      opened = true;
       window.open(whatsappUrl, "_blank");
     };
 
-    if (typeof window.gtag === "function") {
+    if (typeof window !== "undefined" && typeof window.gtag === "function") {
+      // 1. Envia o evento para o GA4
+      window.gtag("event", "whatsapp_click", {
+        event_category: "Contato",
+        event_label: "Botão WhatsApp Geral",
+      });
+
+      // 2. Envia a conversão para o Google Ads
       window.gtag("event", "conversion", {
         send_to: "AW-7973021188/DOrcCIjakdYcEJqalNlC",
         event_callback: callback,
       });
+
+      // 3. Trava de segurança: garante a abertura mesmo se o callback atrasar
+      setTimeout(callback, 1000);
     } else {
-      window.open(whatsappUrl, "_blank");
+      callback();
     }
   }}
 >
@@ -74,8 +85,6 @@ export default function Hero() {
   </svg>
   Falar no WhatsApp
 </a>
-
-
 
 
             {/* Botão Telefone (Usando ícone de telefone profissional do FontAwesome) */}
