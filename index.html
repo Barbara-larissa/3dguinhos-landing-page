@@ -4,22 +4,32 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/png" href="/img/logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>3D Guinchos 24 Horas | Leve & Pesado</title>
 
-    <!-- Google tag (gtag.js) -->
+    <!-- Google Tag (Google Ads + Google Analytics 4) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17903717658"></script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-K8V96PZYK4"></script>
+
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
 
-      gtag('config', 'AW-17903717658');
-      gtag('config', 'G-K8V96PZYK4');
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+
+      gtag("js", new Date());
+
+      // Google Ads
+      gtag("config", "AW-17903717658");
+
+      // Google Analytics 4
+      gtag("config", "G-K8V96PZYK4");
     </script>
   </head>
+
   <body>
     <div id="root"></div>
+
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

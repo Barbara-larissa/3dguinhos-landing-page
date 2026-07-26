@@ -45,30 +45,30 @@ export default function Hero() {
               className={styles.whatsappButton}
               onClick={(e) => {
                 e.preventDefault();
+
                 const whatsappUrl = "https://wa.me/5543991807819";
 
-                const callback = function () {
-                  window.open(whatsappUrl, '_blank');
+                const callback = () => {
+                  window.open(whatsappUrl, "_blank");
                 };
 
-                if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
-                  window.gtag('event', 'conversion', {
-                    'send_to': 'AW-17903717658/DOrcCIjakdYcEJqalNlC',
-                    'event_callback': callback
+                if (typeof window.gtag === "function") {
+                  window.gtag("event", "conversion", {
+                    send_to: "AW-17903717658/DOrcCIjakdYcEJqalNlC",
+                    event_callback: callback,
                   });
                 } else {
-                  callback();
+                  window.open(whatsappUrl, "_blank");
                 }
               }}
             >
-              <div className={styles.buttonIcon}>
-                <FontAwesomeIcon icon={faWhatsapp} />
-              </div>
-              <div className={styles.buttonTextContent}>
-                <span className={styles.buttonTitle}>CHAMAR NO WHATSAPP</span>
-                <span className={styles.buttonSubtitle}>Atendimento 24 horas</span>
-              </div>
+              Falar no WhatsApp
             </a>
+
+
+
+
+
             {/* Botão Telefone (Usando ícone de telefone profissional do FontAwesome) */}
             <a
               href="tel:5543991807819"
