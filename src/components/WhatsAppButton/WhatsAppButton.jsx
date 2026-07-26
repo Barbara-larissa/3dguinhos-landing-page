@@ -25,9 +25,9 @@ export default function WhatsAppButton() {
         event_label: "Botão WhatsApp",
       });
 
-      // Conversão do Google Ads
+      // Conversão do Google Ads (Corrigido para a conta ativa AW-7973021188)
       window.gtag("event", "conversion", {
-        send_to: "AW-17903717658/DOrcCIjakdYcEJqalNlC",
+        send_to: "AW-7973021188/DOrcCIjakdYcEJqalNlC",
         event_callback: callback,
       });
 
