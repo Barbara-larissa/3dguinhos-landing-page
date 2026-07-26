@@ -6,36 +6,22 @@ export default function WhatsAppButton() {
   const message = encodeURIComponent("Olá! Vim pelo site e gostaria de mais informações.");
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
 
-  const handleClick = (e) => {
-    e.preventDefault();
-
-    let opened = false;
-
-    const callback = () => {
-      if (opened) return;
-      opened = true;
-      window.open(whatsappUrl, "_blank");
-    };
-
+  const handleClick = () => {
     if (typeof window !== "undefined" && typeof window.gtag === "function") {
 
-      // Evento personalizado para o Google Analytics 4
+      // Dispara o evento do GA4 usando beacon
       window.gtag("event", "whatsapp_click", {
         event_category: "Contato",
         event_label: "Botão WhatsApp",
+        transport: "beacon"
       });
 
-      // Conversão do Google Ads (Corrigido para a conta ativa AW-7973021188)
+      // Dispara a conversão do Google Ads usando beacon
       window.gtag("event", "conversion", {
         send_to: "AW-7973021188/DOrcCIjakdYcEJqalNlC",
-        event_callback: callback,
+        transport: "beacon"
       });
 
-      // Garante a abertura do WhatsApp caso o callback não seja executado
-      setTimeout(callback, 1000);
-
-    } else {
-      callback();
     }
   };
 
