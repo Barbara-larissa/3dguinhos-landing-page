@@ -1,66 +1,127 @@
+/* ==========================================================
+   ESTILOS JÁ EXISTENTES NO SEU PROJETO (Estrutura e Título)
+   ========================================================== */
+
 .reviewsSection {
+  background-color: #0b0f17; /* Ou o seu fundo escuro atual */
+  padding: 4rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.reviewsContainer {
+  max-width: 1200px;
   width: 100%;
-  padding: 50px 20px;
-  background-color: #0d0d0d;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.sectionTitle {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+
+/* Exemplo do seu efeito neon no título */
+.titleNeon {
+  color:  #2563eb; /* Ajuste para o seu tom de rosa/neon */
+  text-shadow: 0 0 10px rgba(37, 99, 235, 0.5);
+}
+
+.sectionDivider {
+  width: 60px;
+  height: 3px;
+  background-color: #2563eb;
+  margin: 0.5rem auto 2rem auto;
+  border-radius: 2px;
+}
+
+/* ==========================================================
+   NOVOS ESTILOS (Para o Badge de Avaliação do Google)
+   ========================================================== */
+
+/* Container central das avaliações */
+.ratingBadge {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 1.5rem;
 }
 
-.reviewsContainer {
-  width: 100%;
-  max-width: 900px;
-  margin: 0 auto;
+/* Linha com Nota + Estrelas + Texto */
+.scoreGroup {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  
-  /* SEGREDO: Trava a altura máxima e esconde tudo o que vazar para fora */
-  max-height: 330px; /* Ajuste esse valor para cortar exatamente abaixo do botão azul */
-  overflow: hidden;  
-  position: relative;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.6rem;
 }
 
-.sectionTitle {
-  font-size: 1.8rem;
+/* Nota "5.0" */
+.scoreText {
+  font-size: 1.5rem;
   font-weight: 800;
+  color: #ffb400; /* Amarelo dourado das estrelas */
+  line-height: 1;
+}
+
+/* Conjunto de Estrelas ★★★★★ */
+.starsGroup {
+  color: #ffb400;
+  font-size: 1.3rem;
+  letter-spacing: 2px;
+  line-height: 1;
+}
+
+/* Texto "(24 avaliações reais no Google)" */
+.reviewCount {
+  font-size: 0.95rem;
+  color: #a0aec0;
+  font-weight: 400;
+}
+
+/* Botão "Deixar uma avaliação no Google" */
+.googleButton {
+  display: inline-block;
+  background-color: #2563eb;
   color: #ffffff;
-  text-align: center;
-  text-transform: uppercase;
-  margin-bottom: 10px;
-  letter-spacing: 0.5px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 0.8rem 1.6rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3);
 }
 
-.titleNeon {
-  color: #38bdf8;
-  text-shadow: 0 0 10px rgba(56, 189, 248, 0.4);
+.googleButton:hover {
+  background-color: #1d4ed8;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.45);
 }
 
-.sectionDivider {
-  width: 50px;
-  height: 3px;
-  background: linear-gradient(90deg, #38bdf8, #25d366);
-  border-radius: 2px;
-  margin-bottom: 20px;
+.googleButton:active {
+  transform: translateY(0);
 }
 
-@media (max-width: 768px) {
- .reviewsSection {
-    padding: 30px 10px;
-  }
-
-  .reviewsContainer {
-    /* Diminuímos levemente para 315px para cortar a bordinha branca da marca d'água */
-    max-height: 315px; 
-  }
-
+/* Ajustes Responsivos para Telas Menores */
+@media (max-width: 600px) {
   .sectionTitle {
     font-size: 1.5rem;
-    padding: 0 10px;
   }
 
-  .sectionDivider {
-    margin-bottom: 20px;
+  .scoreGroup {
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .googleButton {
+    width: 100%;
+    max-width: 300px;
   }
 }
